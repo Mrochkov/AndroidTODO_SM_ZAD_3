@@ -19,7 +19,7 @@ public class Task {
     }
 
     public Object getDate() {
-        return null;
+        return data;
     }
 
     public boolean isDone() {
@@ -28,5 +28,14 @@ public class Task {
 
     public void setDone(boolean isChecked) {
 
+    }
+
+    public Object getName() {
+        return name;
+    }
+
+
+    public UUID getId() {
+        return id;
     }
 }

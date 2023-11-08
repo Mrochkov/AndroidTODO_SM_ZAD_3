@@ -1,0 +1,14 @@
+
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«ƒå8›øÌªº1
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ì£Ë’üÿÿÿÿ8ÊçÎªº1
+H
+java:S1068"&Remove this unused "id" private field.(Æí¶áşÿÿÿÿ8¦¦Ñ©º1
+E
+java:S1068"(Remove this unused "name" private field.(Ë¥¼8§¦Ñ©º1
+J
+java:S1068	"(Remove this unused "data" private field.(Û‡ß™ÿÿÿÿÿ8¨¦Ñ©º1
+E
+java:S1068
+"(Remove this unused "done" private field.(õĞªÅ8ÓåÑ©º1

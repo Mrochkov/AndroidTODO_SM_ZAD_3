@@ -1,0 +1,21 @@
+
+@
+build.gradle.kts,d\b\dbcff70658daf80b53ce624f6adcaa529df5ed8d
+D
+app/build.gradle.kts,d\2\d2a4383452aad84a18429a5844d31330a012a9e6
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+o
+?app/src/main/java/com/example/androidtodo/TaskListFragment.java,d\c\dc79fcfe29b5ca2e1813935cb07942638f9690f7
+o
+?app/src/main/java/com/example/androidtodo/TaskListActivity.java,a\8\a8edad368ff91c832e17b108577dba4c96ba81ee
+c
+3app/src/main/java/com/example/androidtodo/Task.java,5\7\577992d792945d2bd5924d9fb061139081e652e0
+u
+Eapp/src/main/java/com/example/androidtodo/SingleFragmentActivity.java,2\8\2840a9de72b9bffb8a25b933a0bb0da1f9ef9cfa
+k
+;app/src/main/java/com/example/androidtodo/MainActivity.java,8\5\85151a2b6aaa130e32bff3e09ac04fd8fb22f2e6
+j
+:app/src/main/java/com/example/androidtodo/TaskStorage.java,6\e\6e307d6d106a79c23abbb8b4749c3173a79f34a5
+k
+;app/src/main/java/com/example/androidtodo/TaskFragment.java,f\6\f62988ef9fe2d19f55e962be6469671d9a1e6ff4
