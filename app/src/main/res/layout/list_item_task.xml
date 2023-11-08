@@ -9,16 +9,19 @@
         android:id="@+id/task_item_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:layout_marginBottom="4dp"
-        android:text="Task Name" />
+        android:text="Task Name"
+        android:background="@color/grey"/>
 
     <TextView
         android:id="@+id/task_item_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
-        android:text="Task Date" />
+        android:text="Task Date"
+        android:background="@color/yellow"
+        style="?android:listSeparatorTextViewStyle" />
 
 </LinearLayout>

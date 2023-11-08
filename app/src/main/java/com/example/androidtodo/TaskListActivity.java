@@ -1,17 +1,13 @@
 package com.example.androidtodo;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.os.Bundle;
 
-import java.util.UUID;
+import androidx.fragment.app.Fragment;
 
 public class TaskListActivity extends SingleFragmentActivity {
 
     @Override
     protected Fragment createFragment() {
-        return new TaskFragment();
+        return new TaskListFragment();
     }
-
 }

@@ -15,98 +15,109 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class TaskListFragment extends Fragment {
+public class  TaskListFragment extends Fragment {
     private RecyclerView recyclerView;
     private TaskAdapter adapter;
-    public static final String KEY_EXTRA_TASK_ID = "tasklistfragment.task_id";
+    public static final String KEY_EXTRA_TASK_ID = "task_id";
 
+
+    private void updateView(RecyclerView recyclerView){
+        TaskStorage taskStorage = TaskStorage.getInstance();
+        List<Task> tasks = taskStorage.getTaskList();
+
+        if (adapter == null) {
+            adapter = new TaskAdapter(tasks);
+            this.recyclerView.setAdapter(adapter);
+        }
+        else {
+            adapter.notifyDataSetChanged();
+        }
+    }
+
+
+    private void updateView() {
+        List<Task> tasks = TaskStorage.getInstance().getTasks();
+
+        if (adapter == null) {
+            adapter = new TaskAdapter(tasks);
+            recyclerView.setAdapter(adapter);
+        } else {
+            adapter.setTasks(tasks);
+            adapter.notifyDataSetChanged();
+        }
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        updateView(recyclerView);
+    }
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_task_list, container, false);
         recyclerView = view.findViewById(R.id.task_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        //updateView();
-        return view;
-
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
         updateView();
+        return view;
     }
-    private void updateView(){
-        TaskStorage taskStorage = TaskStorage.getInstance();
-        List<Task> tasks = taskStorage.getTasks();
-
-        if(adapter == null){
-            adapter = new TaskAdapter(tasks);
-            recyclerView.setAdapter(adapter);
-
-        }else {
-            adapter.notifyDataSetChanged();
-        }
-        //updateSubtitle();
-    }
-
 
     private class TaskHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        private Task task;
         private TextView nameTextView;
         private TextView dateTextView;
+        private Task task;
 
-        public TaskHolder(LayoutInflater inflater, ViewGroup parent)
-        {
+        public TaskHolder(LayoutInflater inflater, ViewGroup parent){
             super(inflater.inflate(R.layout.list_item_task, parent, false));
             itemView.setOnClickListener(this);
 
             nameTextView = itemView.findViewById(R.id.task_item_name);
             dateTextView = itemView.findViewById(R.id.task_item_date);
+
         }
 
         public void bind(Task task){
             this.task = task;
-            nameTextView.setText(task.getName().toString());
+            nameTextView.setText(task.getName());
             dateTextView.setText(task.getDate().toString());
         }
 
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(getActivity(), MainActivity.class); // Start TaskActivity
-            intent.putExtra(KEY_EXTRA_TASK_ID, task.getId()); // Pass task ID
+            Intent intent = new Intent(getActivity(), MainActivity.class);
+            intent.putExtra(KEY_EXTRA_TASK_ID, task.getId());
             startActivity(intent);
         }
-
     }
 
     private class TaskAdapter extends RecyclerView.Adapter<TaskHolder>{
         private List<Task> tasks;
-        public TaskAdapter(List<Task> tasks){
+
+        public TaskAdapter(List<Task>tasks){
+            this.tasks = tasks;
+        }
+
+        public void setTasks(List<Task> tasks) {
             this.tasks = tasks;
         }
 
         @NonNull
         @Override
-        public TaskHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        public TaskHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
             return new TaskHolder(layoutInflater, parent);
         }
+
         @Override
-        public void onBindViewHolder(@NonNull TaskHolder holder, int position) {
+        public void onBindViewHolder(@NonNull TaskHolder holder, int position){
             Task task = tasks.get(position);
             holder.bind(task);
         }
 
         @Override
-        public int getItemCount() {
+        public int getItemCount(){
             return tasks.size();
-
         }
     }
-
-
-
-
 }
