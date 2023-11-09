@@ -1,5 +1,5 @@
 
+x
+java:S41445"[Update this method so that its implementation is not identical to "getTaskList" on line 40.(œÌà®8Î¤æ‰»1
 »
-java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(°·‰æøÿÿÿÿ8Î¤“²º1
-H
-java:S1168"+Return an empty collection instead of null.(¥¹ï8Ë ›²º1
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(°·‰æøÿÿÿÿ8š”‰»1

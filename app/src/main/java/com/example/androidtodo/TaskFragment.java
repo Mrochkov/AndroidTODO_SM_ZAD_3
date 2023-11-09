@@ -52,7 +52,6 @@ public class TaskFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_task, container, false);
 
-        EditText nameField = view.findViewById(R.id.task_name);
 
         nameField = view.findViewById(R.id.task_name);
         nameField.setText(task.getName());

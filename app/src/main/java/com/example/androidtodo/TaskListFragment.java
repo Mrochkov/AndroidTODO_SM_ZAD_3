@@ -21,26 +21,12 @@ public class  TaskListFragment extends Fragment {
     public static final String KEY_EXTRA_TASK_ID = "task_id";
 
 
-    private void updateView(RecyclerView recyclerView){
-        TaskStorage taskStorage = TaskStorage.getInstance();
-        List<Task> tasks = taskStorage.getTaskList();
-
-        if (adapter == null) {
-            adapter = new TaskAdapter(tasks);
-            this.recyclerView.setAdapter(adapter);
-        }
-        else {
-            adapter.notifyDataSetChanged();
-        }
-    }
-
-
-    private void updateView() {
+    private void updateView(RecyclerView recyclerView) {
         List<Task> tasks = TaskStorage.getInstance().getTasks();
 
         if (adapter == null) {
             adapter = new TaskAdapter(tasks);
-            recyclerView.setAdapter(adapter);
+            this.recyclerView.setAdapter(adapter);
         } else {
             adapter.setTasks(tasks);
             adapter.notifyDataSetChanged();
@@ -59,7 +45,7 @@ public class  TaskListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_task_list, container, false);
         recyclerView = view.findViewById(R.id.task_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        updateView();
+        updateView(recyclerView);
         return view;
     }
 

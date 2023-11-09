@@ -1,7 +1,11 @@
 
+^
+java:S1874"<Remove this use of "getSerializableExtra"; it is deprecated.(şåÕüÿÿÿÿ8Æ¸Â»1
 b
-java:S1128"ERemove this unused import 'androidx.appcompat.app.AppCompatActivity'.(€¶£î8Š½³º1
-d
-java:S1128"BRemove this unused import 'androidx.fragment.app.FragmentManager'.(¯­ë‹ıÿÿÿÿ8Š½³º1
+java:S1128"ERemove this unused import 'androidx.appcompat.app.AppCompatActivity'.(€¶£î8£Úˆ»1
 P
-java:S1128".Remove this unused import 'android.os.Bundle'.(°şÊóøÿÿÿÿ8Š½³º1
+java:S1128".Remove this unused import 'android.os.Bundle'.(°şÊóøÿÿÿÿ8£Úˆ»1
+K
+java:S1128".Remove this unused import 'android.view.Menu'.(£¯Ò…8£Úˆ»1
+S
+java:S1128"6Remove this unused import 'android.view.MenuInflater'.(¥ñ´Ò8£Úˆ»1
